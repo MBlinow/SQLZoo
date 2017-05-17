@@ -36,3 +36,18 @@ Modify it to show the player, teamid, stadium and mdate and for every German goa
 SELECT player,teamid, stadium, mdate
   FROM game JOIN goal ON (id=matchid)
   where teamid='GER'
+/* 4.
+Use the same JOIN as in the previous question.
+
+Show the team1, team2 and player for every goal scored by a player called Mario player LI */KE 'Mario%'
+SELECT team1, team2, player
+  FROM game JOIN goal ON (id=matchid)
+  where player LIKE 'Mario%'
+  
+  /* 5.
+The table eteam gives details of every national team including the coach. You can JOIN goal to eteam using the phrase goal JOIN eteam on teamid=id
+
+Show player, teamid, coach, gtime for all goals scored in the first 10 minutes gtim */e<=10
+SELECT player, teamid, coach, gtime
+  FROM goal join eteam on teamid=id
+ WHERE gtime<=10
